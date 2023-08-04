@@ -8,6 +8,7 @@ func main() {
 	// Filter scores >= 90 dan append ke slice goodScores
 
 	// Hitung rata rata
+	// Expect : 83.125
 	var total int
 	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
 
@@ -22,6 +23,7 @@ func main() {
 
 
 	// Filter scores >= 90, append kedalam goodScores
+	// Expect : [100 92 93]
 	var goodScores []int
 	scores = [8]int{100, 80, 75, 92, 70, 93, 88, 67}
 
