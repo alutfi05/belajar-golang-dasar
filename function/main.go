@@ -9,12 +9,18 @@ func main() {
 	result := add(5, 2)
 	fmt.Println(result)
 
-	luas, keliling := rectangle(5, 2);
-	fmt.Println("Luas :", luas)
-	fmt.Println("Keliling :", keliling)
+	area, around := rectangle(5, 2);
+	fmt.Println("Luas dan keliling persegi panjang")
+	fmt.Println("Luas :", area)
+	fmt.Println("Keliling :", around)
 	
 	// luas, _ := rectangle(5, 2);
 	// fmt.Println("Luas :", luas)
+
+	luas, keliling := square(3, 3)
+	fmt.Println("Luas dan keliling persegi")
+	fmt.Println("Luas :", luas)
+	fmt.Println("Keliling :", keliling)
 }
 
 // Basic function
@@ -29,9 +35,17 @@ func add(numberOne, numberTwo int) int {
 }
 
 // Function with multiple return
-func rectangle(panjang, lebar int) (int, int) {
-	luas := panjang * lebar
-	keliling := 2 * (panjang + lebar)
+func rectangle(length, width int) (int, int) {
+	area := length * width
+	around := 2 * (length + width)
 
-	return luas, keliling
+	return area, around
+}
+
+// Predefined return value
+func square(sideOne, sideTwo int) (area, around int) {
+	area = sideOne * sideTwo
+	around = 4 * sideOne
+
+	return
 }
