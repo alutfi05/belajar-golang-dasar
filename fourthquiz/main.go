@@ -8,14 +8,14 @@ import (
 func main() {
 	// Quiz 4
 	// Create function sum
-	// Result : 39
+	// Result sum : 39
 	scores := []int{10, 5, 8, 9, 7}
 	total := sum(scores)
 
 	fmt.Println("Result sum :", total)
 
 	// Create function calculate
-	// Result : 12
+	// Result (+) : 12
 	resultPlus, err := calculate(10, 2, "+");
 	if err != nil {
 		fmt.Println(err.Error())
@@ -23,7 +23,7 @@ func main() {
 
 	fmt.Println("Result (+) :", resultPlus)
 
-	// Result : 8
+	// Result (-) : 8
 	resultMin, err := calculate(10, 2, "-");
 	if err != nil {
 		fmt.Println(err.Error())
@@ -31,7 +31,7 @@ func main() {
 
 	fmt.Println("Result (-) :", resultMin)
 
-	// Result : 20
+	// Result (*) : 20
 	resultMultiply, err := calculate(10, 2, "*");
 	if err != nil {
 		fmt.Println(err.Error())
@@ -39,7 +39,7 @@ func main() {
 
 	fmt.Println("Result (*) :", resultMultiply)
 
-	// Result : 5
+	// Result (/) : 5
 	resultDistribution, err := calculate(10, 2, "/");
 	if err != nil {
 		fmt.Println(err.Error())
