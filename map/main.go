@@ -14,9 +14,28 @@ func main() {
 	myMap := map[string]string{
 		"typescript": "is javascript superset",
 		"golang": "is super fast",
+		"javascript": "is very usefull",
 	}
 
 	fmt.Println(myMap)
 	fmt.Println(myMap["typescript"])
 	fmt.Println(myMap["golang"])
+
+	for key, value := range myMap {
+		fmt.Println("Key :", key, ", value :", value)
+	}
+
+	fmt.Println("==============")
+
+	// Delete item in map
+	delete(myMap, "javascript")
+
+	for key, value := range myMap {
+		fmt.Println("Key :", key, ", value :", value)
+	}
+
+	// Checking key is exist
+	value, isAvailable := myMap["PHP"]
+	fmt.Println(value)
+	fmt.Println(isAvailable)
 }
