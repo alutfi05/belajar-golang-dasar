@@ -10,6 +10,14 @@ type User struct {
 	isActive  bool
 }
 
+// Embedded Struct
+type Group struct {
+	Name 		string
+	Admin 		User
+	Users 		[]User
+	isAvailable bool
+}
+
 func main() {
 	user := User{}
 	user.ID = 1
@@ -31,9 +39,32 @@ func main() {
 
 	fmt.Println(displayUser1)
 	fmt.Println(displayUser2)
+
+	users := []User{user, user2}
+
+	group := Group{
+		Name: "Gaming",
+		Admin: user,
+		Users: users,
+		isAvailable: true,
+	}
+
+	displayGroup(group)
 }
 
 // Struct as parameter 
 func displayUser(user User) string {
 	return fmt.Sprintf("Name: %s %s, Email: %s", user.FirstName, user.LastName, user.Email)
+}
+
+func displayGroup(group Group) {
+	fmt.Printf("Name: %s", group.Name)
+	fmt.Println("")
+	fmt.Printf("Member count: %d", len(group.Users))
+	fmt.Println("")
+
+	fmt.Println("Users name")
+	for _, user := range group.Users {
+		fmt.Println(user.FirstName)
+	}
 }
