@@ -10,6 +10,11 @@ type User struct {
 	isActive  bool
 }
 
+// Method User Struct
+func (user User) display() string {
+	return fmt.Sprintf("Name: %s %s, Email: %s", user.FirstName, user.LastName, user.Email)
+}
+
 // Embedded Struct
 type Group struct {
 	Name 		string
@@ -40,6 +45,7 @@ func main() {
 	fmt.Println(displayUser1)
 	fmt.Println(displayUser2)
 
+	// Embedded Struct
 	users := []User{user, user2}
 
 	group := Group{
@@ -50,6 +56,13 @@ func main() {
 	}
 
 	displayGroup(group)
+
+	// Method Struct
+	resultDisplay1 := user.display()
+	resultDisplay2 := user2.display()
+
+	fmt.Println(resultDisplay1)
+	fmt.Println(resultDisplay2)
 }
 
 // Struct as parameter 
