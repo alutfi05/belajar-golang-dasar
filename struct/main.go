@@ -26,6 +26,14 @@ func main() {
 		isActive: true,
 	}
 
-	fmt.Println(user)
-	fmt.Println(user2)
+	displayUser1 := displayUser(user)
+	displayUser2 := displayUser(user2)
+
+	fmt.Println(displayUser1)
+	fmt.Println(displayUser2)
+}
+
+// Struct as parameter 
+func displayUser(user User) string {
+	return fmt.Sprintf("Name: %s %s, Email: %s", user.FirstName, user.LastName, user.Email)
 }
