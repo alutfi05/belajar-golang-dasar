@@ -34,4 +34,20 @@ func main() {
 	fmt.Println("numberOne :", numberOne)
 	fmt.Println("numberTwo reference (&) :", numberTwo)
 	fmt.Println("numberTwo dereference (*):", *numberTwo)
+
+	// Studi kasus
+	fmt.Println("Studi Kasus")
+	number := 5
+	// fmt.Println("Alamat memory :", &number)
+	fmt.Println("Old number :", number)
+	
+	change(&number, 100)
+	// fmt.Println("Alamat memory :", &number)
+	fmt.Println("New number :", number)
+}
+
+func change(old *int, new int) {
+	*old = new
+	// fmt.Println("Alamat memory :", old)
+	// fmt.Println("function :", *old)
 }
