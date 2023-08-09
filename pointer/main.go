@@ -20,4 +20,18 @@ func main() {
 	*numberB = 10
 	fmt.Println("numberB :", *numberB)
 	fmt.Println("numberA :", numberA)
+
+	// Advanced pointer
+	var numberOne int = 10
+	var numberTwo *int = &numberOne
+
+	fmt.Println("numberOne :", numberOne)
+	fmt.Println("numberTwo reference (&):", numberTwo)
+	fmt.Println("numberTwo dereference (*):", *numberTwo)
+
+	numberOne = 50
+	fmt.Println("Seletah numberOne diubah menjadi 50")
+	fmt.Println("numberOne :", numberOne)
+	fmt.Println("numberTwo reference (&) :", numberTwo)
+	fmt.Println("numberTwo dereference (*):", *numberTwo)
 }
