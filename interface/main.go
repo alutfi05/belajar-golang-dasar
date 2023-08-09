@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // Contract interface
-type Luas interface {
+type BangunDatar interface {
 	// Methdo
 	HitungLuas() int
 }
@@ -31,6 +31,7 @@ func main() {
 	}
 
 	fmt.Println("Luas Persegi, Sisi = 2 adalah", persegi.HitungLuas())
+	fmt.Println("Luas Persegi, Sisi = 2 adalah", LuasBangunDatar(persegi))
 
 	persegiPanjang := PersegiPanjang{
 		Panjang: 2,
@@ -38,4 +39,10 @@ func main() {
 	}
 
 	fmt.Println("Luas Persegi Panjang, Panjang = 2, Lebar = 3 adalah", persegiPanjang.HitungLuas())
+	fmt.Println("Luas Persegi Panjang, Panjang = 2, Lebar = 3 adalah", LuasBangunDatar(persegiPanjang))
+}
+
+// bisa diberikan apapun parameter nya asal type mempunyai contract dengan interface dan mempunyai method HitungLuas()
+func LuasBangunDatar(bangunDatar BangunDatar) int {
+	return bangunDatar.HitungLuas()
 }
