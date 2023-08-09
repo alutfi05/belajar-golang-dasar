@@ -8,6 +8,11 @@ type Student struct {
 	GPA  float32
 }
 
+// Method with pointer receiver
+func (student *Student) graduate()  {
+	student.Name += " A.Md.Kom."
+}
+
 func main() {
 	student := Student{
 		ID:   1,
@@ -18,12 +23,14 @@ func main() {
 	// Expect : Ahmad Lutfi Rizki Patria
 	fmt.Println(student.Name)
 
-	graduate(&student)
+	// graduate(&student)
+	student.graduate()
 
 	// Expect : Ahmad Lutfi Rizki Patria A.Md.Kom.
 	fmt.Println(student.Name)
 }
 
-func graduate(student *Student)  {
-	student.Name += " A.Md.Kom."
-}
+// Function with pointer struct as parameter
+// func graduate(student *Student)  {
+// 	student.Name += " A.Md.Kom."
+// }
